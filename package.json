@@ -1,9 +1,6 @@
 {
   "name": "sentry-miniapp",
   "version": "0.11.1",
-  "description": "用于小程序/小游戏平台的 Sentry SDK",
-  "repository": "git://github.com/lizhiyao/sentry-miniapp.git",
-  "homepage": "https://github.com/lizhiyao/sentry-miniapp",
   "miniprogram": "dist",
   "main": "dist/index.js",
   "module": "esm/index.js",
@@ -38,7 +35,7 @@
     "钉钉小程序",
     "字节跳动小程序"
   ],
-  "author": "dancerlzy@gmail.com",
+  "author": "xuzhanhh@gmail.com",
   "license": "BSD-3-Clause",
   "engines": {
     "node": ">=8"
