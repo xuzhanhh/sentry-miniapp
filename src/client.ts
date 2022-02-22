@@ -1,4 +1,4 @@
-import { API, BaseClient, Scope } from "@sentry/core";
+import { BaseClient, Scope, getReportDialogEndpoint } from "@sentry/core";
 import { DsnLike, Event, EventHint } from "@sentry/types";
 import { getGlobalObject, logger } from "@sentry/utils";
 
@@ -103,7 +103,7 @@ export class MiniappClient extends BaseClient<MiniappBackend, MiniappOptions> {
 
     const script = document.createElement("script");
     script.async = true;
-    script.src = new API(dsn).getReportDialogEndpoint(options);
+    script.src = getReportDialogEndpoint(dsn, options);
 
     if (options.onLoad) {
       script.onload = options.onLoad;

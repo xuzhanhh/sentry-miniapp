@@ -1,7 +1,7 @@
 # dependencies
 node_modules/
 packages/*/package-lock.json
-
+.yarn
 # build and test
 dist/
 esm/
@@ -22,13 +22,14 @@ local.log
 # ide
 .idea
 *.sublime-*
+.vscode
 
 # misc
 .DS_Store
 ._*
 .Spotlight-V100
 .Trashes
-
+.yarnrc.yml
 .rpt2_cache
 
 lint-results.json

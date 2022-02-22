@@ -133,7 +133,8 @@ export function flush(timeout?: number): PromiseLike<boolean> {
   if (client) {
     return client.flush(timeout);
   }
-  return SyncPromise.reject(false);
+  // return SyncPromise.reject(false);
+  return new SyncPromise((_, reject) => reject(false))
 }
 
 /**
@@ -147,7 +148,8 @@ export function close(timeout?: number): PromiseLike<boolean> {
   if (client) {
     return client.close(timeout);
   }
-  return SyncPromise.reject(false);
+  // return SyncPromise.reject(false);
+  return new SyncPromise((_, reject) => reject(false))
 }
 
 /**
