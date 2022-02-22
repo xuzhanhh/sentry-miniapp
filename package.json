@@ -61,7 +61,7 @@
     "@sentry/utils": "^6.17.9",
     "tslib": "^1.10.0"
   },
-  "pushConfig": {
+  "publishConfig": {
     "public": true,
     "access": "public"
   }
