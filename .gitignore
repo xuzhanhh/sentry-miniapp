@@ -1,7 +1,7 @@
 # dependencies
 node_modules/
 packages/*/package-lock.json
-.yarn
+.yarn/cache
 # build and test
 dist/
 esm/
