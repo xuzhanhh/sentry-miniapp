@@ -1,5 +1,5 @@
 import {
-  getCurrentHub,
+    getCurrentHub,
   initAndBind,
   Integrations as CoreIntegrations,
 } from "@sentry/core";
@@ -94,6 +94,12 @@ export function init(options: MiniappOptions = {}): void {
   options.normalizeDepth = options.normalizeDepth || 5;
 
   initAndBind(MiniappClient, options);
+
+  if(options.autoSessionTracking) {
+    const hub = getCurrentHub()
+    hub.startSession({ignoreDuration: true})
+    hub.captureSession()
+  }
 }
 
 /**
