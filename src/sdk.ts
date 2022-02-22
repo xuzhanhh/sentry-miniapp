@@ -1,5 +1,5 @@
 import {
-  getCurrentHub,
+    getCurrentHub,
   initAndBind,
   Integrations as CoreIntegrations,
 } from "@sentry/core";
@@ -94,6 +94,12 @@ export function init(options: MiniappOptions = {}): void {
   options.normalizeDepth = options.normalizeDepth || 5;
 
   initAndBind(MiniappClient, options);
+
+  if(options.autoSessionTracking) {
+    const hub = getCurrentHub()
+    hub.startSession({ignoreDuration: true})
+    hub.captureSession()
+  }
 }
 
 /**
@@ -133,7 +139,8 @@ export function flush(timeout?: number): PromiseLike<boolean> {
   if (client) {
     return client.flush(timeout);
   }
-  return SyncPromise.reject(false);
+  // return SyncPromise.reject(false);
+  return new SyncPromise((_, reject) => reject(false))
 }
 
 /**
@@ -147,7 +154,8 @@ export function close(timeout?: number): PromiseLike<boolean> {
   if (client) {
     return client.close(timeout);
   }
-  return SyncPromise.reject(false);
+  // return SyncPromise.reject(false);
+  return new SyncPromise((_, reject) => reject(false))
 }
 
 /**

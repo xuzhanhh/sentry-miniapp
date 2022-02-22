@@ -8,7 +8,7 @@ export {
   Severity,
   StackFrame,
   Stacktrace,
-  Status,
+  // Status,
   Thread,
   User
 } from "@sentry/types";
@@ -50,3 +50,4 @@ import * as Integrations from "./integrations/index";
 import * as Transports from "./transports/index";
 
 export { Integrations, Transports };
+console.log('init self sentry miniapp!')

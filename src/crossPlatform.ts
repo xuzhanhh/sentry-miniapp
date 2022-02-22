@@ -4,7 +4,7 @@ declare const tt: any; // 字节跳动小程序
 declare const dd: any; // 钉钉小程序
 declare const qq: any; // QQ 小程序、QQ 小游戏
 declare const swan: any; // 百度小程序
-
+declare const bn: any;
 /**
  * 小程序平台 SDK 接口
  */
@@ -29,6 +29,7 @@ type AppName =
   | "dingtalk"
   | "qq"
   | "swan"
+  | "bn"
   | "unknown";
 
 /**
@@ -62,7 +63,10 @@ const getSDK = () => {
   } else if (typeof swan === "object") {
     // tslint:disable-next-line: no-unsafe-any
     currentSdk = swan;
-  } else {
+  } else if(typeof bn === "object") {
+
+    currentSdk = bn
+  }else {
     throw new Error("sentry-miniapp 暂不支持此平台");
   }
 

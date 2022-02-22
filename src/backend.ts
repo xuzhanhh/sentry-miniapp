@@ -68,7 +68,8 @@ export class MiniappBackend extends BaseBackend<MiniappOptions> {
     if (hint && hint.event_id) {
       event.event_id = hint.event_id;
     }
-    return SyncPromise.resolve(event);
+    // return SyncPromise.resolve(event);
+    return new SyncPromise(resolve => resolve(event))
   }
   /**
    * @inheritDoc
@@ -82,6 +83,7 @@ export class MiniappBackend extends BaseBackend<MiniappOptions> {
     if (hint && hint.event_id) {
       event.event_id = hint.event_id;
     }
-    return SyncPromise.resolve(event);
+    // return SyncPromise.resolve(event);
+    return new SyncPromise(resolve => resolve(event))
   }
 }
