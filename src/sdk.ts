@@ -15,6 +15,7 @@ import {
   Router,
   System,
   TryCatch,
+  Breadcrumbs
 } from "./integrations/index";
 
 export const defaultIntegrations = [
@@ -27,6 +28,7 @@ export const defaultIntegrations = [
   new System(),
   new Router(),
   new IgnoreMpcrawlerErrors(),
+  new Breadcrumbs(),
 ];
 
 /**

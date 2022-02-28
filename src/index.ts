@@ -50,4 +50,5 @@ import * as Integrations from "./integrations/index";
 import * as Transports from "./transports/index";
 
 export { Integrations, Transports };
+export { bindRequest } from "./bindRequest"
 console.log('init self sentry miniapp!')
