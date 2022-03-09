@@ -1,0 +1,1 @@
+export const getGlobalObject = () => global

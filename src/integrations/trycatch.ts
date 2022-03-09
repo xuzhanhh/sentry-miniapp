@@ -1,6 +1,7 @@
 import { Integration, WrappedFunction } from "@sentry/types";
-import { fill, getGlobalObject } from "@sentry/utils";
+import { fill } from "@sentry/utils";
 
+import { getGlobalObject } from '../utils/get-object'
 import { wrap } from "../helpers";
 
 /** Wrap timer functions and event targets to catch errors and provide better meta data */
@@ -154,9 +155,9 @@ export class TryCatch implements Integration {
 
     const global = getGlobalObject();
 
-    fill(global, "setTimeout", this._wrapTimeFunction.bind(this));
-    fill(global, "setInterval", this._wrapTimeFunction.bind(this));
-    fill(global, "requestAnimationFrame", this._wrapRAF.bind(this));
+    fill(global, "setTimeout", this._wrapTimeFunction);
+    fill(global, "setInterval", this._wrapTimeFunction);
+    fill(global, "requestAnimationFrame", this._wrapRAF);
 
     [
       "EventTarget",
@@ -188,7 +189,7 @@ export class TryCatch implements Integration {
       "XMLHttpRequest",
       "XMLHttpRequestEventTarget",
       "XMLHttpRequestUpload"
-    ].forEach(this._wrapEventTarget.bind(this));
+    ].forEach(this._wrapEventTarget);
   }
 }
 

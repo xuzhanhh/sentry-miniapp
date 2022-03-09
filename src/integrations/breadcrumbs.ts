@@ -6,13 +6,13 @@ import { Event, Integration } from '@sentry/types';
 import {
   addInstrumentationHandler,
   getEventDescription,
-  getGlobalObject,
   htmlTreeAsString,
   parseUrl,
   safeJoin,
   severityFromString,
 } from '@sentry/utils';
 
+import { getGlobalObject } from '../utils/get-object'
 /** JSDoc */
 interface BreadcrumbsOptions {
   console: boolean;
