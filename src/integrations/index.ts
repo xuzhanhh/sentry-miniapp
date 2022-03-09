@@ -6,3 +6,4 @@ export { System } from "./system";
 export { Router } from "./router";
 export { IgnoreMpcrawlerErrors } from "./ignoreMpcrawlerErrors";
 export { Breadcrumbs } from './breadcrumbs'
+export { Dedupe } from './dedupe'

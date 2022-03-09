@@ -15,7 +15,8 @@ import {
   Router,
   System,
   TryCatch,
-  Breadcrumbs
+  Breadcrumbs,
+  Dedupe,
 } from "./integrations/index";
 
 export const defaultIntegrations = [
@@ -29,6 +30,7 @@ export const defaultIntegrations = [
   new Router(),
   new IgnoreMpcrawlerErrors(),
   new Breadcrumbs(),
+  new Dedupe(),
 ];
 
 /**

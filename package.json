@@ -1,6 +1,6 @@
 {
   "name": "@binance/sentry-miniapp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "miniprogram": "dist",
   "main": "dist/index.js",
   "module": "esm/index.js",
